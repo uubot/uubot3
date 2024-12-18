@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+console.log(process.cwd())
 app.get('/', (request, response) => {
     response.send('hello~')
 })
