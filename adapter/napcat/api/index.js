@@ -1,5 +1,5 @@
 const axios = require('axios').create({
-	baseURL: 'http://' + require('uu-env').get('adapter.config.http')
+	baseURL: 'http://' + require('../config.json')
 })
 
 /**

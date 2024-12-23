@@ -1,13 +1,8 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
-console.log(process.cwd())
-app.get('/', (request, response) => {
-    response.send('hello~')
-})
-
-app.post('/', (request, response) => {
-
-})
+app.use(bodyParser.json())
+app.use(require('./handler/eventHandler'))
 
 app.listen(9600, () => {
     console.log('uu starting')

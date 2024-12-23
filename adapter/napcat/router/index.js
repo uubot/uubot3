@@ -23,9 +23,9 @@ setInterval(() => {
 	nameCache.users = {}
 }, 1000 * 60 * 60 * 24)
 
-exports.route = async function(json) {
+exports.route = async function(request) {
 	// 初始化 router 对象
-	const data = JSON.parse(json)
+	const data = request.body
 	// 忽略心跳事件
 	if (data.post_type === 'meta_event' && (data.meta_event_type === 'lifecycle') || data.meta_event_type === 'heartbeat') {
 		return
